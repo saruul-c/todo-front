@@ -1,26 +1,17 @@
-import { ReactNode, useEffect, useState } from "react";
+// layout/Auth.tsx
+import { ReactNode, useState } from "react";
+import NavigationDrawer from "@/components/NavigationDrawer";
+import ProjectDisplay from "@/components/ProjectDisplay";
+import { Box } from "@mui/material";
 
-export default function Auth({ children }: { children: ReactNode }) {
-  const userLoggedIn = true;
-  const [state, setstate] = useState<boolean>(false);
-  // const registered =
-  
+const AuthLayout = ({ children }: { children: ReactNode }) => {
+  const [authorized, setAuthorized] = useState<boolean>(true);
 
-  useEffect(() => {
-    console.log(1);
+  if (authorized) {
+    return children
+  } else {
+    return <div>please login</div>;
+  }
+};
 
-    return()=>{
-      console.log(3)
-    }
-  }, [state]);
-
-  useEffect(() => {
-   
-    const temp = setInterval(()=>{
-      setstate((current)=>!current)
-    },1000)
-  }, [])
-  
-  
-  return userLoggedIn && children;
-}
+export default AuthLayout;

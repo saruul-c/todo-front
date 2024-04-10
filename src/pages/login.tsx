@@ -10,31 +10,25 @@ interface CenteredContainerProps {
   className?: string;
 }
 
-interface LoginPageProps {
-  onViewChange: (view: string) => void;
-}
-  
-
 const CenteredContainer: React.FC<CenteredContainerProps> = ({ children, className }) => {
   return <div className={`container flex justify-center items-center h-screen ${className}`}>{children}</div>;
 };
 
-function Home(): React.ReactElement {
-  const [currentView, setCurrentView] = useState('login');
+const Home: React.FC = () => {
+  const [currentView, setCurrentView] = useState<string>('login');
 
   const handleViewChange = (view: string) => {
     setCurrentView(view);
   };
 
-    return (
+  return (
     <CenteredContainer className="mx-auto my-auto">
-      {currentView === 'login' && <LoginForm onClick={() => handleViewChange('registration')} className="bg-red-500" />}
-      {currentView === 'registration' && <RegistrationForm />}
-      {currentView === 'forgotPassword' && <ForgotPasswordForm />}
-      {currentView === 'recreatePassword' && <RecreatePasswordForm />}
+      {currentView === 'login' && <LoginForm onViewChange={handleViewChange} />}
+      {currentView === 'registration' && <RegistrationForm onViewChange={handleViewChange} />}
+      {currentView === 'forgotPassword' && <ForgotPasswordForm onViewChange={handleViewChange} />}
+      {currentView === 'recreatePassword' && <RecreatePasswordForm onViewChange={handleViewChange} />}
     </CenteredContainer>
   );
-}
+};
 
-// Export Home correctly
 export default Home;
