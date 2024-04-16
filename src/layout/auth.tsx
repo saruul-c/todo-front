@@ -1,7 +1,7 @@
 // layout/Auth.tsx
 import { ReactNode, useState } from "react";
 import NavigationDrawer from "@/components/NavigationDrawer";
-import ProjectDisplay from "@/components/ProjectDisplay";
+import ProjectDisplay from "@/components/TodayTask";
 import { Box } from "@mui/material";
 
 const AuthLayout = ({ children }: { children: ReactNode }) => {

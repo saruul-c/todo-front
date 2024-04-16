@@ -45,7 +45,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onViewChange }) => {
         className="mt-4 leading-10 text-neutral-400"
       />
       <Button
-        onClick={() => onViewChange('registration')}
+        onClick={() => onViewChange('/index')}
         variant="contained"
         color="primary"
         type="submit"

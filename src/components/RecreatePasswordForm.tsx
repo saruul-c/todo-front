@@ -5,32 +5,33 @@ import { styled } from "@mui/material/styles";
 import { useRouter } from "next/router";
 import LoginForm from "@/pages/login";
 
-const RegistrationFormContainer = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: "100vh",
-  backgroundColor: "white",
-  py: 20,
+const RecreatePasswordFormContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  minHeight: '100vh',
+  backgroundColor: 'white',
+  padding: theme.spacing(5),
   maxWidth: 440,
-  "@media (max-width:600px)": {},
-});
+  margin: 'auto',
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '100%',
+  },
+}));
 
-function RegistrationForm({
-  onClick,
-  className
-}: {
-  onClick: React.MouseEventHandler;
-  className?:string
-}) {
+
+interface RecreatePasswordProps {
+  onViewChange: (view: string) => void;
+}
+
+const RecreatePasswordForm: React.FC<RecreatePasswordProps> = ({ onViewChange }) => {
   const router = useRouter();
 
+
   return (
-    <RegistrationFormContainer>
-      <div className={`self-center mt-10 text-3xl leading-10 tracking-[2.4px] ${className}`}>
-        Бүртгүүлэх
-      </div>
+    <RecreatePasswordFormContainer>
+      <h2 className="self-center mt-10 text-3xl leading-10 tracking-[2.4px]">Бүртгүүлэх</h2>
 
       <TextField
         label="Бүтэн нэр"
@@ -70,15 +71,15 @@ function RegistrationForm({
       </Button>
 
       <div className="flex gap-0 justify-center mt-4 text-base tracking-widest leading-10">
-        <div className="flex-1 pt-3.5 pb-1.5">
-          <a href="#">Бүртгэл бий юу?</a>
-        </div>
-        <div className="justify-end items-start px-3 pt-3.5 pb-1.5 text-orange-400 whitespace-nowrap">
-          <a onClick={onClick}>Нэвтрэх</a>
-        </div>
+      <Button onClick={() => onViewChange('forgotPassword')} className="flex-1 pt-3.5 pb-1.5">
+          Нууц үгээ санасан уу?
+        </Button>
+        <Button onClick={() => onViewChange('registration')} className="justify-end items-start px-3 pt-3.5 pb-1.5 text-orange-400 whitespace-nowrap">
+          Нэвтрэх
+        </Button>
       </div>
-    </RegistrationFormContainer>
+    </RecreatePasswordFormContainer>
   );
 }
 
-export default RegistrationForm;
+export default RecreatePasswordForm;
