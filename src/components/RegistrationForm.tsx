@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useRouter } from 'next/router';
+import CustomButton from './button';
 
 const FormContainer = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -19,12 +20,13 @@ const FormContainer = styled('div')(({ theme }) => ({
 }));
 
 interface RegistrationFormProps {
-  onViewChange: (view: string) => void;
+  onBackToLogin: () => void;
 }
 
-const RegistrationForm: React.FC<RegistrationFormProps> = ({ onViewChange }) => {
+const RegistrationForm: React.FC<RegistrationFormProps> = ({ onBackToLogin  }) => {
   const router = useRouter();
 
+  const newLocal = "justify-end items-end px-3 pt-3.5 pb-1.5 text-orange-400 whitespace-nowrap";
   return (
     <FormContainer>
       <h2 className="self-center mt-10 text-3xl leading-10 tracking-[2.4px]">Бүртгүүлэх</h2>
@@ -52,19 +54,14 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onViewChange }) => 
         required
         className="mt-4 leading-10 text-neutral-400"
       />
-      <Button
-        onClick={() => onViewChange('login')}
-        variant="contained"
-        color="primary"
-        className="items-center px-24 mt-8 font-semibold text-center whitespace-nowrap bg-orange-400 rounded-lg leading-[222%]"
-      >
+      <CustomButton onClick={onBackToLogin}>
         Бүртгүүлэх
-      </Button>
+      </CustomButton>
       <div className="flex gap-0 justify-center mt-8 text-base tracking-widest leading-10">
-        <Button onClick={() => onViewChange('login')} className="flex-1 justify-start pt-3.5 ">
+        <Button onClick={onBackToLogin} className="flex-1 justify-start pt-3.5 text-grey whitespace-nowrap">
           Бүртгэл бий юу?
         </Button>
-        <Button onClick={() => onViewChange('login')} className="justify-end items-end px-3 pt-3.5 pb-1.5 text-orange-400 whitespace-nowrap">
+        <Button onClick={onBackToLogin} className={newLocal}>
           Нэвтрэх
         </Button>
       </div>

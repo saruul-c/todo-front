@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useRouter } from 'next/router';
+import CustomButton from './button';
+import { login } from '@/lib/axios';
 
 const LoginFormContainer = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -19,11 +20,26 @@ const LoginFormContainer = styled('div')(({ theme }) => ({
 }));
 
 interface LoginFormProps {
-  onViewChange: (view: string) => void;
+  onLogin: (email: string, password: string) => void;
+  onForgotPasswordClick: () => void;
+  onRegistrationClick: () => void;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ onViewChange }) => {
-  const router = useRouter();
+const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onForgotPasswordClick, onRegistrationClick }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    try {
+      // Call the login API with email and password
+      await onLogin(email, password);
+      // Handle successful login, navigate to '/project' route, etc.
+
+    } catch (error) {
+      // Handle login error
+      console.error('Login failed:', error);
+    }
+  };
 
   return (
     <LoginFormContainer>
@@ -34,6 +50,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ onViewChange }) => {
         margin="normal"
         fullWidth
         required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         className="mt-20 leading-10 text-neutral-400"
       />
       <TextField
@@ -42,22 +60,18 @@ const LoginForm: React.FC<LoginFormProps> = ({ onViewChange }) => {
         margin="normal"
         fullWidth
         required
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
         className="mt-4 leading-10 text-neutral-400"
       />
-      <Button
-        onClick={() => onViewChange('/index')}
-        variant="contained"
-        color="primary"
-        type="submit"
-        className="items-center px-24 mt-8 font-semibold text-center whitespace-nowrap bg-orange-400 rounded-lg leading-[222%]"
-      >
+      <CustomButton onClick={handleLogin} variant="contained">
         Нэвтрэх
-      </Button>
-      <div className="flex gap-0 justify-center mt-8 text-base tracking-widest leading-10">
-        <Button onClick={() => onViewChange('forgotPassword')} className="flex-1 pt-3.5 pb-1.5">
+      </CustomButton>
+      <div className="flex gap-0 justify- mt-8 text-base tracking-widest leading-10">
+        <Button onClick={onForgotPasswordClick} className="flex-1 pt-3.5 pb-1.5">
           Нууц үг сэргээх
         </Button>
-        <Button onClick={() => onViewChange('registration')} className="justify-end items-start px-3 pt-3.5 pb-1.5 text-orange-400 whitespace-nowrap">
+        <Button onClick={onRegistrationClick} className="justify-end items-start px-3 pt-3.5 pb-1.5 text-orange-400 whitespace-nowrap">
           Бүртгүүлэх
         </Button>
       </div>

@@ -31,28 +31,19 @@ const RecreatePasswordForm: React.FC<RecreatePasswordProps> = ({ onViewChange })
 
   return (
     <RecreatePasswordFormContainer>
-      <h2 className="self-center mt-10 text-3xl leading-10 tracking-[2.4px]">Бүртгүүлэх</h2>
+      <h2 className="self-center mt-10 text-3xl leading-10 tracking-[2.4px]">Нууц үг сэргээх</h2>
 
       <TextField
-        label="Бүтэн нэр"
-        type="name"
+        label="Шинэ нууц үг"
+        type="password"
         margin="normal"
         fullWidth
         required
-        className="mt-20 leading-10 text-neutral-400"
+        className="mt-4 leading-10 text-neutral-400"
       />
 
       <TextField
-        label="Имэйл"
-        type="email"
-        margin="normal"
-        fullWidth
-        required
-        className="mt-4 leading-10 text-neutral-100"
-      />
-
-      <TextField
-        label="Нууц үг"
+        label="Шинэ нууц үг давтах"
         type="password"
         margin="normal"
         fullWidth
@@ -61,20 +52,20 @@ const RecreatePasswordForm: React.FC<RecreatePasswordProps> = ({ onViewChange })
       />
 
       <Button
-        onClick={() => router.push("/login")}
+        onClick={() => router.push("/index")}
         variant="contained"
         color="primary"
         type="submit"
         className="items-center px-24  mt-8 font-semibold text-center whitespace-nowrap bg-orange-400 rounded-lg leading-[222%]"
       >
-        Бүртгүүлэх
+        Шинэчлэх
       </Button>
 
       <div className="flex gap-0 justify-center mt-4 text-base tracking-widest leading-10">
-      <Button onClick={() => onViewChange('forgotPassword')} className="flex-1 pt-3.5 pb-1.5">
+      <Button onClick={() => onViewChange('login')} className="flex-1 pt-3.5 pb-1.5">
           Нууц үгээ санасан уу?
         </Button>
-        <Button onClick={() => onViewChange('registration')} className="justify-end items-start px-3 pt-3.5 pb-1.5 text-orange-400 whitespace-nowrap">
+        <Button onClick={() => onViewChange('login')} className="justify-end items-start px-3 pt-3.5 pb-1.5 text-orange-400 whitespace-nowrap">
           Нэвтрэх
         </Button>
       </div>

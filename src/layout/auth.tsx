@@ -1,17 +1,50 @@
-// layout/Auth.tsx
-import { ReactNode, useState } from "react";
-import NavigationDrawer from "@/components/NavigationDrawer";
-import ProjectDisplay from "@/components/TodayTask";
-import { Box } from "@mui/material";
+// layout/auth.tsx
+import React, { useState } from "react";
+import LoginForm from "@/components/LoginForm";
+import RegistrationForm from "@/components/RegistrationForm";
+import ForgotPasswordForm from "@/components/PasswordForgotForm";
+import { login } from "@/lib/axios";
 
-const AuthLayout = ({ children }: { children: ReactNode }) => {
-  const [authorized, setAuthorized] = useState<boolean>(true);
+const Auth = ({ children }: { children: React.ReactNode }) => {
+  const [authorized, setAuthorized] = useState<boolean>(false);
+  const [currentView, setCurrentView] = useState<'login' | 'register' | 'forgotPassword'>('login');
+
+  const handleLogin = async (email: string, password: string) => {
+    try {
+      console.log('Logging in...');
+
+      await login(email, password); // Call login function
+      setAuthorized(true); // Set authorized state to true upon successful login
+    } catch (error) {
+      console.error('Login failed:', error);
+      setAuthorized(false); 
+    }
+  };
+
+  const handleViewChange = (view: 'login' | 'register' | 'forgotPassword') => {
+    setCurrentView(view);
+  };
 
   if (authorized) {
-    return children
+    return children;
   } else {
-    return <div>please login</div>;
+    switch (currentView) {
+      case 'login':
+        return (
+          <LoginForm
+            onLogin={handleLogin}
+            onForgotPasswordClick={() => handleViewChange('forgotPassword')}
+            onRegistrationClick={() => handleViewChange('register')}
+          />
+        );
+      case 'register':
+        return <RegistrationForm onBackToLogin={() => handleViewChange('login')} />;
+      case 'forgotPassword':
+        return <ForgotPasswordForm onBackToLogin={() => handleViewChange('login')} />;
+      default:
+        return null;
+    }
   }
 };
 
-export default AuthLayout;
+export default Auth;

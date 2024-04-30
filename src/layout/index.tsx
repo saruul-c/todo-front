@@ -1,17 +1,13 @@
 import NavigationDrawer from "@/components/NavigationDrawer";
-import React, { ReactNode } from "react";
-import {useRouter} from "next/router"
+import React from "react";
 
-const Layout = ({ children }: { children: ReactNode }) => {
-  const router = useRouter();
-  const showHeader = router.pathname === '/login' ? false : true;
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="h-screen w-screen flex">
-      <div className="w-[200px] h-full"></div>
-      {showHeader && <NavigationDrawer /> }
-      <div className="w-full h-full">{children}</div>
+    <div style={{ display: 'flex', minHeight: '100vh' }}>
+      <NavigationDrawer />
+      <main style={{ flexGrow: 1, padding: '16px', marginLeft: '320px' }}> {/* marginLeft should be equal to the width of the drawer */}
+    {children}
+  </main>
     </div>
   );
 }
- 
-export default Layout;
