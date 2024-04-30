@@ -21,4 +21,22 @@ const CustomButton = styled(Button)(({ theme }) => ({
   justifyContent: 'center',
 }));
 
-export default CustomButton;
+const CustomButton2 = styled(Button)(({ theme }) => ({
+  alignSelf: 'stretch',
+  maxWidth: '400px',
+  fontSize: '14px',
+  color: '#000000',
+  fontWeight: 500,
+  whiteSpace: 'nowrap',
+  textAlign: 'center',
+  letterSpacing: '1.44px',
+  lineHeight: '222%',
+  borderRadius: '8px',
+  padding: '0px 60px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+export { CustomButton, CustomButton2 };
+export default CustomButton; 
