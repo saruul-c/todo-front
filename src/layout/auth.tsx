@@ -3,21 +3,20 @@ import React, { useState } from "react";
 import LoginForm from "@/components/LoginForm";
 import RegistrationForm from "@/components/RegistrationForm";
 import ForgotPasswordForm from "@/components/PasswordForgotForm";
-import { login } from "@/lib/axios";
+import { login } from "@/lib/axios/api";
 
 const Auth = ({ children }: { children: React.ReactNode }) => {
   const [authorized, setAuthorized] = useState<boolean>(false);
   const [currentView, setCurrentView] = useState<'login' | 'register' | 'forgotPassword'>('login');
 
-  const handleLogin = async (email: string, password: string) => {
+  const handleLogin = async (username: string, password: string) => {
     try {
       console.log('Logging in...');
-
-      await login(email, password); // Call login function
-      setAuthorized(true); // Set authorized state to true upon successful login
+      await login(username, password); 
+      setAuthorized(true); 
     } catch (error) {
       console.error('Login failed:', error);
-      setAuthorized(false); 
+      setAuthorized(false);
     }
   };
 
@@ -26,7 +25,7 @@ const Auth = ({ children }: { children: React.ReactNode }) => {
   };
 
   if (authorized) {
-    return children;
+    return <>{children}</>;
   } else {
     switch (currentView) {
       case 'login':

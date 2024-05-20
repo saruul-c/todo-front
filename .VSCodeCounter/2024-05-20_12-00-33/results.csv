@@ -1,0 +1,61 @@
+"filename", "language", "JSON with Comments", "TypeScript", "Markdown", "XML", "TypeScript JSX", "CSS", "JavaScript", "JSON", "Properties", "HTML", "comment", "blank", "total"
+"c:\Users\user\my-project\to-do\.env", "Properties", 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 2
+"c:\Users\user\my-project\to-do\.eslintrc.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\user\my-project\to-do\README.md", "Markdown", 0, 0, 31, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47
+"c:\Users\user\my-project\to-do\my-app\README.md", "Markdown", 0, 0, 38, 0, 0, 0, 0, 0, 0, 0, 0, 33, 71
+"c:\Users\user\my-project\to-do\my-app\package-lock.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 18410, 0, 0, 0, 1, 18411
+"c:\Users\user\my-project\to-do\my-app\package.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 38, 0, 0, 0, 1, 39
+"c:\Users\user\my-project\to-do\my-app\public\index.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 23, 1, 44
+"c:\Users\user\my-project\to-do\my-app\public\manifest.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 25, 0, 0, 0, 1, 26
+"c:\Users\user\my-project\to-do\my-app\src\App.css", "CSS", 0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 6, 39
+"c:\Users\user\my-project\to-do\my-app\src\App.js", "JavaScript", 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 3, 26
+"c:\Users\user\my-project\to-do\my-app\src\App.test.js", "JavaScript", 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 2, 9
+"c:\Users\user\my-project\to-do\my-app\src\index.css", "CSS", 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 2, 14
+"c:\Users\user\my-project\to-do\my-app\src\index.js", "JavaScript", 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 3, 3, 18
+"c:\Users\user\my-project\to-do\my-app\src\logo.svg", "XML", 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\user\my-project\to-do\my-app\src\reportWebVitals.js", "JavaScript", 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 2, 14
+"c:\Users\user\my-project\to-do\my-app\src\setupTests.js", "JavaScript", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4, 1, 6
+"c:\Users\user\my-project\to-do\next.config.mjs", "JavaScript", 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 1, 2, 7
+"c:\Users\user\my-project\to-do\package-lock.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 8333, 0, 0, 0, 1, 8334
+"c:\Users\user\my-project\to-do\package.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 68, 0, 0, 0, 1, 69
+"c:\Users\user\my-project\to-do\postcss.config.js", "JavaScript", 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 1, 7
+"c:\Users\user\my-project\to-do\public\next.svg", "XML", 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\user\my-project\to-do\public\vercel.svg", "XML", 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\user\my-project\to-do\src\components\Alarm.js", "JavaScript", 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 3, 13
+"c:\Users\user\my-project\to-do\src\components\DayColumn.tsx", "TypeScript JSX", 0, 0, 0, 0, 37, 0, 0, 0, 0, 0, 0, 5, 42
+"c:\Users\user\my-project\to-do\src\components\Header.tsx", "TypeScript JSX", 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 2, 9
+"c:\Users\user\my-project\to-do\src\components\LoginForm.tsx", "TypeScript JSX", 0, 0, 0, 0, 71, 0, 0, 0, 0, 0, 2, 8, 81
+"c:\Users\user\my-project\to-do\src\components\MyCalendar.tsx", "TypeScript JSX", 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 7, 39
+"c:\Users\user\my-project\to-do\src\components\NavigationDrawer.tsx", "TypeScript JSX", 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 7, 70
+"c:\Users\user\my-project\to-do\src\components\PasswordForgotForm.tsx", "TypeScript JSX", 0, 0, 0, 0, 55, 0, 0, 0, 0, 0, 0, 7, 62
+"c:\Users\user\my-project\to-do\src\components\PomodoroTimerCounter.tsx", "TypeScript JSX", 0, 0, 0, 0, 74, 0, 0, 0, 0, 0, 0, 12, 86
+"c:\Users\user\my-project\to-do\src\components\ProjectSelection.tsx", "TypeScript JSX", 0, 0, 0, 0, 22, 0, 0, 0, 0, 0, 0, 5, 27
+"c:\Users\user\my-project\to-do\src\components\RecreatePasswordForm.tsx", "TypeScript JSX", 0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 11, 75
+"c:\Users\user\my-project\to-do\src\components\RegistrationForm.tsx", "TypeScript JSX", 0, 0, 0, 0, 98, 0, 0, 0, 0, 0, 0, 8, 106
+"c:\Users\user\my-project\to-do\src\components\TaskCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 5, 37
+"c:\Users\user\my-project\to-do\src\components\Timer.tsx", "TypeScript JSX", 0, 0, 0, 0, 112, 0, 0, 0, 0, 0, 1, 12, 125
+"c:\Users\user\my-project\to-do\src\components\TodayTask.tsx", "TypeScript JSX", 0, 0, 0, 0, 120, 0, 0, 0, 0, 0, 0, 10, 130
+"c:\Users\user\my-project\to-do\src\components\TodoItem.tsx", "TypeScript JSX", 0, 0, 0, 0, 35, 0, 0, 0, 0, 0, 3, 9, 47
+"c:\Users\user\my-project\to-do\src\components\UpcomingTask.tsx", "TypeScript JSX", 0, 0, 0, 0, 27, 0, 0, 0, 0, 0, 0, 7, 34
+"c:\Users\user\my-project\to-do\src\components\UserInfoPanel.tsx", "TypeScript JSX", 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 6, 35
+"c:\Users\user\my-project\to-do\src\components\button.tsx", "TypeScript JSX", 0, 0, 0, 0, 39, 0, 0, 0, 0, 0, 0, 3, 42
+"c:\Users\user\my-project\to-do\src\components\dashboard.tsx", "TypeScript JSX", 0, 0, 0, 0, 34, 0, 0, 0, 0, 0, 1, 6, 41
+"c:\Users\user\my-project\to-do\src\components\tasklist.tsx", "TypeScript JSX", 0, 0, 0, 0, 39, 0, 0, 0, 0, 0, 1, 7, 47
+"c:\Users\user\my-project\to-do\src\layout\auth.tsx", "TypeScript JSX", 0, 0, 0, 0, 43, 0, 0, 0, 0, 0, 1, 6, 50
+"c:\Users\user\my-project\to-do\src\layout\header.tsx", "TypeScript JSX", 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 2, 2, 15
+"c:\Users\user\my-project\to-do\src\layout\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 1, 1, 17
+"c:\Users\user\my-project\to-do\src\lib\axios\api.tsx", "TypeScript JSX", 0, 0, 0, 0, 139, 0, 0, 0, 0, 0, 43, 23, 205
+"c:\Users\user\my-project\to-do\src\lib\axios\axios.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 37, 9, 46
+"c:\Users\user\my-project\to-do\src\lib\axios\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 104, 20, 124
+"c:\Users\user\my-project\to-do\src\pages\_app.tsx", "TypeScript JSX", 0, 0, 0, 0, 27, 0, 0, 0, 0, 0, 1, 3, 31
+"c:\Users\user\my-project\to-do\src\pages\_document.tsx", "TypeScript JSX", 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 2, 14
+"c:\Users\user\my-project\to-do\src\pages\dashboard.tsx", "TypeScript JSX", 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 0, 4, 15
+"c:\Users\user\my-project\to-do\src\pages\timer.tsx", "TypeScript JSX", 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 5, 15
+"c:\Users\user\my-project\to-do\src\pages\todayTask.tsx", "TypeScript JSX", 0, 0, 0, 0, 36, 0, 0, 0, 0, 0, 0, 8, 44
+"c:\Users\user\my-project\to-do\src\pages\upcoming.tsx", "TypeScript JSX", 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 1, 4, 16
+"c:\Users\user\my-project\to-do\src\react-beautiful-dnd.d.ts", "TypeScript", 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\user\my-project\to-do\src\styles\globals.css", "CSS", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 2, 8
+"c:\Users\user\my-project\to-do\src\types\types.ts", "TypeScript", 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 27
+"c:\Users\user\my-project\to-do\tailwind.config.ts", "TypeScript", 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 21
+"c:\Users\user\my-project\to-do\tsconfig.json", "JSON with Comments", 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 23
+"Total", "-", 21, 42, 69, 3, 1305, 51, 75, 26877, 1, 20, 230, 316, 29010

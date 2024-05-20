@@ -1,6 +1,14 @@
 import React from 'react';
 import Dashboard from '@/components/dashboard'; // Import the Dashboard component
+import TaskList from '@/components/tasklist';
 
-export default function Page() {
-  return <Dashboard />; // Render the Dashboard component
+const DashboardPage = () => {
+  return (
+    <div>
+      <Dashboard/>
+      
+    </div>
+  );
 }
+
+export default DashboardPage;

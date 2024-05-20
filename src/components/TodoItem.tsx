@@ -1,15 +1,11 @@
 import { useState } from "react";
-// import express = require('express');
-
 
 export default function TodoList() {
   const [todos, setTodos] = useState<string[]>([]);
 
-
   //middleware huseltiig validate hiine
   // duudah path - route
   // function uuding tsugluulga - controller
-
 
   function remove(){
 
@@ -18,9 +14,9 @@ export default function TodoList() {
 
   const [inputValue, setInputValue] = useState("");
 
-  //   function handleChange(e: any) {
-  //     setInputValue(e.target.value);
-  //   }
+    function handleChange(e: any) {
+      setInputValue(e.target.value);
+    }
 
   function handleSubmit(props: { value: string }) {
     setTodos((current) => [...current, props.value]);

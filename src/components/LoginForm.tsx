@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import CustomButton from './button';
-import { login } from '@/lib/axios';
 
 const LoginFormContainer = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -20,19 +19,18 @@ const LoginFormContainer = styled('div')(({ theme }) => ({
 }));
 
 interface LoginFormProps {
-  onLogin: (email: string, password: string) => void;
+  onLogin: (username: string, password: string) => void;
   onForgotPasswordClick: () => void;
   onRegistrationClick: () => void;
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onForgotPasswordClick, onRegistrationClick }) => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
     try {
-      // Call the login API with email and password
-      await onLogin(email, password);
+      await onLogin(username, password);
       // Handle successful login, navigate to '/project' route, etc.
 
     } catch (error) {
@@ -45,13 +43,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onForgotPasswordClick, o
     <LoginFormContainer>
       <h2 className="self-center mt-10 text-3xl leading-10 tracking-[2.4px]">Нэвтрэх</h2>
       <TextField
-        label="Имэйл"
-        type="email"
+        label="Нэр"
+        type="username"
         margin="normal"
         fullWidth
         required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
         className="mt-20 leading-10 text-neutral-400"
       />
       <TextField

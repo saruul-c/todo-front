@@ -1,61 +1,108 @@
 import React, { useState } from 'react';
-import { Box, Typography, List, ListItem, ListItemText, TextField, IconButton } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import CustomButton from './button';
+import { toast } from 'react-toastify';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Box, Typography, List, ListItem, ListItemText, TextField, Button, IconButton } from '@mui/material';
 
 interface Task {
   id: number;
-  name: string;
-  dueDate: string;
+  task_name: string;
+  time_spent: number;
 }
 
-interface TodayTasksProps {
-  tasks: Task[];
-  onTaskClick: (taskId: number) => void; // Pass the task ID to the click handler
-}
-
-const TodayTasks: React.FC<TodayTasksProps> = ({ tasks, onTaskClick }) => {
-  const [taskList, setTaskList] = useState<Task[]>(tasks);
+const TodayTasks: React.FC = () => {
+  const [taskList, setTaskList] = useState<Task[]>([]);
   const [newTaskName, setNewTaskName] = useState('');
+  const [editTaskId, setEditTaskId] = useState<number | null>(null);
+  const [editedName, setEditedName] = useState('');
+  const [editedTime, setEditedTime] = useState<number | null>(null);
 
   const handleAddTask = () => {
-    const newId = taskList.length + 1; // Ensure this is a unique ID
-    const newTask = { id: newId, name: newTaskName, dueDate: new Date().toISOString().split('T')[0] };
-    setTaskList([...taskList, newTask]);
+    const newTask: Task = {
+      id: Date.now(),
+      task_name: newTaskName,
+      time_spent: 0,
+    };
+    setTaskList((prevTasks) => [...prevTasks, newTask]);
     setNewTaskName('');
+    toast.success('Даалгавар амжилттай нэмэгдлээ!');
+  };
+
+  const handleDeleteTask = (taskId: number) => {
+    setTaskList((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+    toast.success('Даалгавар амжилттай устлаа!');
+  };
+
+  const handleUpdateTask = (taskId: number) => {
+    const updatedTasks = taskList.map((task) =>
+      task.id === taskId ? { ...task, task_name: editedName, time_spent: editedTime ?? task.time_spent } : task
+    );
+    setTaskList(updatedTasks);
+    setEditTaskId(null);
+    toast.success('Даалгавар амжилттай шинэчлэгдлээ!');
+  };
+
+  const handleEditTask = (taskId: number, taskName: string, timeSpent: number) => {
+    setEditTaskId(taskId);
+    setEditedName(taskName);
+    setEditedTime(timeSpent);
   };
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', p: 3 }}>
-      <Typography variant="h4" sx={{ mb: 4 }}>Visual даалгавар</Typography>
-      
-      {/* Task Input Form */}
-      <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-        <TextField
-          label="Нэмэх..."
-          variant="outlined"
-          value={newTaskName}
-          onChange={(e) => setNewTaskName(e.target.value)}
-          size="small"
-          sx={{ flexGrow: 1, mr: 1 }}
-        />
-        <CustomButton color="primary" onClick={handleAddTask}>
-          <AddIcon />
-        </CustomButton>
-      </Box>
-
-      {/* List of Tasks */}
+      <Typography variant="h4">Даалгавар нэмэх</Typography>
+      <TextField
+        label="Даалгаврын нэр"
+        variant="outlined"
+        value={newTaskName}
+        onChange={(e) => setNewTaskName(e.target.value)}
+        size="small"
+        sx={{ mb: 2 }}
+      />
+      <Button onClick={handleAddTask} color="warning">
+        Нэмэх
+      </Button>
       <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        {taskList.map((task) => (
-          <ListItem 
-            key={task.id}
-            divider
-            onClick={() => onTaskClick(task.id)} // Pass the task ID to the click handler
-            sx={{ cursor: 'pointer' }}
-          >
-            <ListItemText primary={task.name} secondary={`Due: ${task.dueDate}`} />
-          </ListItem>
-        ))}
+        {taskList.length > 0 ? (
+          taskList.map((task) => (
+            <ListItem key={task.id} divider sx={{ cursor: 'pointer' }}>
+              {editTaskId === task.id ? (
+                <>
+                  <TextField
+                    label="Даалгаврын нэр"
+                    variant="outlined"
+                    value={editedName}
+                    onChange={(e) => setEditedName(e.target.value)}
+                    size="small"
+                    sx={{ mb: 2, width: '60%' }}
+                  />
+                  <TextField
+                    label="Зарцуулсан цаг"
+                    variant="outlined"
+                    value={editedTime ?? ''}
+                    onChange={(e) => setEditedTime(parseInt(e.target.value))}
+                    size="small"
+                    sx={{ mb: 2, width: '30%' }}
+                  />
+                  <Button onClick={() => handleUpdateTask(task.id)} color="warning">
+                    Хадгалах
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <ListItemText primary={task.task_name} secondary={`Цаг: ${task.time_spent}`} />
+                  <IconButton edge="end" onClick={() => handleEditTask(task.id, task.task_name, task.time_spent)}>
+                    Засах
+                  </IconButton>
+                  <IconButton edge="end" onClick={() => handleDeleteTask(task.id)}>
+                    <DeleteIcon />
+                  </IconButton>
+                </>
+              )}
+            </ListItem>
+          ))
+        ) : (
+          <Typography>No tasks found</Typography>
+        )}
       </List>
     </Box>
   );

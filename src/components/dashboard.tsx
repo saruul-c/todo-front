@@ -1,8 +1,9 @@
 import React from "react";
 import { Avatar, Box, Typography } from '@mui/material';
+import profileImage from '../image/profile.jpg';
 
 const Dashboard = () => {
-    // Your tasks data
+    
     const tasks = [
         { name: 'Мобайл хөгжүүлэлт', time: '20:00:35', progress: 100 },
         { name: 'Visual даалгавар', time: '1:20:00', progress: 80 },
@@ -13,8 +14,8 @@ const Dashboard = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-                <Typography variant="h4">Саруулмаа's Dashboard</Typography>
-                <Avatar src="path_to_profile_picture.jpg" sx={{ width: 56, height: 56 }} /> {/* Replace with profile picture URL */}
+                <Typography variant="h4">Цэцэгжаргалын</Typography>
+                <Avatar src={profileImage.src} sx={{ width: 100, height: 100 }} />
             </Box>
             
             <Box className="bg-gray-100 rounded-lg p-8">
