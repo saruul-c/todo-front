@@ -9,7 +9,7 @@ const backend = axios.create({
   // },
   // withCredentials: true
 });
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRzZXRzZWdlZSIsImlhdCI6MTcxNjEzODc1NywiZXhwIjoxNzE2NzQzNTU3fQ.ZlpSLC0zq76ILleJy1AsMaIhPn6ATlX43-myayV2l0g';
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRzZXRzZWdlZSIsImlhdCI6MTcxNjI4OTYxNCwiZXhwIjoxNzE2ODk0NDE0fQ.nrQdhzQBfN2P9NtqEbLJWzdPjyWnMMmxLRcbiWiTens';
 
 // // Токен сэргээх
 // async function refreshToken() {
@@ -91,7 +91,7 @@ export const fetchUserData = async () => {
     throw new Error('No token found');
   }
 
-  const response = await axios.get('/api/users/', {
+  const response = await backend.get('/api/users/', {
     headers: {
       Authorization: `Bearer ${token}`,
     },

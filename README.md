@@ -38,6 +38,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<<<<<<< HEAD
 
 components-
 User Info Panel- Хэрэглэгчийн мэдээлэл болон даалгаварыг харуулна.
@@ -45,3 +46,5 @@ Task Detail Panel- Даалгаврын дэлгэрэнгүй мэдээлэл
 Auth: Тохиргоонд сонгосон төслийн бүртгэлийг төлөвлөхийг зөвлөнө.
 navigationDrawer:Хэрэглэгч төсөл сонгох үед энэ төлөвийг шинэчлэнэ.
 ProjectDisplay: Сонгосон төслийн өгөгдлийг авч харуулах бүрэлдэхүүн хэсгийг үүсгэнэ.
+=======
+>>>>>>> 20a02ca387150ccb9d990c7f11f54769b1621f9a

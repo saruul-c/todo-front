@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Box, Typography, List, ListItem, ListItemText, TextField, Button, IconButton } from '@mui/material';
+import { getAllTasks } from '@/lib/axios/api';
 
 interface Task {
   id: number;
@@ -15,6 +16,20 @@ const TodayTasks: React.FC = () => {
   const [editTaskId, setEditTaskId] = useState<number | null>(null);
   const [editedName, setEditedName] = useState('');
   const [editedTime, setEditedTime] = useState<number | null>(null);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const tasks = await getAllTasks();
+        setTaskList(tasks);
+      } catch (error) {
+        console.error('Failed to fetch tasks:', error);
+        setTaskList([]); // Ensure taskList is always an array
+      }
+    };
+
+    fetchTasks();
+  }, []);
 
   const handleAddTask = () => {
     const newTask: Task = {
@@ -62,7 +77,7 @@ const TodayTasks: React.FC = () => {
         Нэмэх
       </Button>
       <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        {taskList.length > 0 ? (
+        {taskList && taskList.length > 0 ? (
           taskList.map((task) => (
             <ListItem key={task.id} divider sx={{ cursor: 'pointer' }}>
               {editTaskId === task.id ? (

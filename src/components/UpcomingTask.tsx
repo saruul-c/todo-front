@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box } from '@mui/material';
 import MyCalendar from './MyCalendar';
-import { createTask, getAllTasks } from '@/lib/axios/api';
+import { getAllTasks } from '@/lib/axios/api';
 import { Task } from '@/types/types';
-import { toast } from 'react-toastify';
+
 
 const UpcomingTask: React.FC = () => {
   const [taskList, setTaskList] = useState<Task[]>([]);
-  const [newTaskName, setNewTaskName] = useState('');
 
   useEffect(() => {
     const fetchTasks = async () => {

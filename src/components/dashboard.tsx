@@ -5,7 +5,7 @@ import profileImage from '../image/profile.jpg';
 const Dashboard = () => {
     
     const tasks = [
-        { name: 'Мобайл хөгжүүлэлт', time: '20:00:35', progress: 100 },
+        { name: 'Мобайл хөгжүүлэлт', time: '2:00:35', progress: 100 },
         { name: 'Visual даалгавар', time: '1:20:00', progress: 80 },
         { name: 'Java хөгжүүлэлт', time: '1:20:00', progress: 60 },
         { name: 'Мобайлын дизайн', time: '1:00', progress: 20 },
@@ -14,7 +14,7 @@ const Dashboard = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-                <Typography variant="h4">Цэцэгжаргалын</Typography>
+                <Typography variant="h4">Саруулмаагийн үр дүн</Typography>
                 <Avatar src={profileImage.src} sx={{ width: 100, height: 100 }} />
             </Box>
             

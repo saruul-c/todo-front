@@ -20,9 +20,10 @@ const FormContainer = styled('div')(({ theme }) => ({
 
 interface ForgotPasswordFormProps {
   onBackToLogin: (view: string) => void;
+  onRecreatePassword: (view: string) => void;
 }
 
-const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({ onBackToLogin }) => {
+const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({ onBackToLogin, onRecreatePassword }) => {
   const router = useRouter();
   
   return (
@@ -37,7 +38,7 @@ const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({ onBackToLogin }
         className="mt-20 leading-10 text-neutral-400"
       />
       <Button
-        onClick={() => onBackToLogin('recreatePassword')}
+        onClick={() => onRecreatePassword('recreatePassword')}
         variant="contained"
         color="primary"
         type="submit"
@@ -46,15 +47,20 @@ const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({ onBackToLogin }
         Илгээх
       </Button>
       <div className="flex gap-0 justify-center mt-8 text-base tracking-widest leading-10">
-        <button onClick={() => onBackToLogin('login')}className="flex-1 pt-3.5 pb-1.5">
+        <button
+          onClick={() => onRecreatePassword('recreatePassword')}
+          className="flex-1 pt-3.5 pb-1.5"
+        >
           Нууц үгээ санасан уу?
         </button>
-        <button onClick={() => onBackToLogin('login')}className="justify-end items-start px-3 pt-3.5 pb-1.5 text-orange-400 whitespace-nowrap">
+        <button
+          onClick={() => onBackToLogin('login')}
+          className="justify-end items-start px-3 pt-3.5 pb-1.5 text-orange-400 whitespace-nowrap"
+        >
           Нэвтрэх
         </button>
       </div>
     </FormContainer>
-
   );
 };
 
